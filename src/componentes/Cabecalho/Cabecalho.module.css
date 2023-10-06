@@ -1,0 +1,17 @@
+.container {
+    background-color: #2d2eba;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 300px;
+    height: 200px;
+}
+
+.titulo {
+    color: white;
+    font-size:3.1em;
+
+}

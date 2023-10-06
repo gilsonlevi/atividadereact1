@@ -8,7 +8,6 @@ function App() {
     <>
       <Cabecalho logo="imagens/header-logo.png" titulo="Supermercado Favorito"/>
       <CadastroUsuario/>
-
       <Rodape logo="imagens/header-logo.png"/>
     </>
   );

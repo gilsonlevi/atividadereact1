@@ -1,12 +1,11 @@
 import React from 'react'
 
-const CadastroUsuario = () => {
-  return (
+function CadastroUsuario() {
+  return(
     <div>
 
-
     </div>
-  )
+  );
 }
 
-export default CadastroUsuario
+export default CadastroUsuario;

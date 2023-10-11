@@ -19,7 +19,7 @@ function CadastroUsuario() {
     if(senhaUsuario != senhaUsuarioConfirmada) {
       alert("As senhas não são iguais")
     }else{
-      salvarUsuario(emailUsuario, nomeUsuario, senhaUsuario)
+      salvarUsuario(nomeUsuario,emailUsuario, senhaUsuario)
     }
 
   }

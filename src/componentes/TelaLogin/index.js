@@ -16,10 +16,6 @@ function TelaLogin() {
         }else{
             alert("Senha ou email incorretas")
         }
-
-        
-
-
     }
 
     return (
@@ -39,14 +35,14 @@ function TelaLogin() {
             <label>Senha:</label>
             <br/>
             <input
-                type='text'
+                type='password'
                 name="senhaUsuario"
                 onChange={(e=> setSenhaUsuario(e.target.value))}
             ></input>
             <br/>
             <input
                 type="button"
-                value="Cadastrar"
+                value="Logar"
                 onClick={()=> confimarSenha()}
             />
             </form>

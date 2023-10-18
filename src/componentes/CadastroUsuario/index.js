@@ -13,6 +13,8 @@ function CadastroUsuario() {
     let usuario = {nomeUsuario, emailUsuario, senhaUsuario}
     console.log(usuario)
     localStorage.setItem("usuario", JSON.stringify (usuario))
+    console.log("sla")
+
   }
 
   function validacaoSenha(senhaUsuario, senhaUsuarioConfirmada) {
@@ -21,7 +23,6 @@ function CadastroUsuario() {
     }else{
       salvarUsuario(nomeUsuario,emailUsuario, senhaUsuario)
     }
-
   }
 
   return(

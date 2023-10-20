@@ -9,21 +9,28 @@ function CadastroUsuario() {
   const [senhaUsuario, setSenhaUsuario] = useState("")
   const [senhaUsuarioConfirmada, setSenhaConfirmada] = useState("")
 
+  function limparCampos(){
+    console.log('limpando')
+    setEmailUsuario('')
+    setNomeUsuario('')
+    setSenhaUsuario('')
+    setSenhaConfirmada('')
+  }
   function salvarUsuario(nomeUsuario, emailUsuario, senhaUsuario) {
     let usuario = {nomeUsuario, emailUsuario, senhaUsuario}
     console.log(usuario)
     localStorage.setItem("usuario", JSON.stringify (usuario))
-    console.log("sla")
-
+    limparCampos()
   }
 
   function validacaoSenha(senhaUsuario, senhaUsuarioConfirmada) {
-    if(senhaUsuario != senhaUsuarioConfirmada) {
+    if(senhaUsuario !== senhaUsuarioConfirmada) {
       alert("As senhas não são iguais")
     }else{
       salvarUsuario(nomeUsuario,emailUsuario, senhaUsuario)
     }
   }
+
 
   return(
     <div className={styles.container}>
@@ -35,6 +42,7 @@ function CadastroUsuario() {
       <input
         type='text'
         name='nomeUsuario'
+        value={nomeUsuario}
         onChange={(e)=> setNomeUsuario(e.target.value)}
       ></input>
       <br/>
@@ -44,15 +52,17 @@ function CadastroUsuario() {
       <input
         type='email'
         name='emailUsuario'
+        value={emailUsuario}
         onChange={(e)=> setEmailUsuario(e.target.value)}
       ></input>
        <br/>
 
       <label>Senha:</label>
       <br/>
-      <input
+      <input 
         type='password'
         name='senhaUsuario'
+        value={senhaUsuario}
         onChange={(e)=> setSenhaUsuario(e.target.value)}
       ></input>
        <br/>
@@ -62,6 +72,7 @@ function CadastroUsuario() {
       <input
         type='password'
         name='senhaUsuarioConfirmada'
+        value={senhaUsuarioConfirmada}
         onChange={(e)=> setSenhaConfirmada(e.target.value)}
       ></input><br/>
       <input type="button" value="Cadastrar" 

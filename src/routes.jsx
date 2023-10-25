@@ -13,12 +13,14 @@ function Rotas() {
         <Cabecalho 
         logo="imagens/header-logo.png" 
         titulo="Supermercado Favorito"/> 
+        
         <Routes>
         <Route path="/" element={<Principal/>}/>
         <Route path="/sobrenos" element={<SobreNos/>}/>
         <Route path="/login" element={<TelaLogin/>}/>
         <Route path="/cadastro" element={<CadastroUsuario/>}/>
         </Routes>
+        
         <Rodape logo="imagens/header-logo.png"/>
 
         </BrowserRouter>

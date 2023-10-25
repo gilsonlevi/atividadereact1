@@ -2,9 +2,11 @@ import styles from './SobreNos.module.css'
 
 function SobreNos() {
     return(
-        <>
-        <h2>Bem vindo a nossa pagina</h2>
-        </>
+        <div>
+            <h1>Sobre nós</h1>
+            A nossa empresa 
+
+        </div>
     )
 }
 

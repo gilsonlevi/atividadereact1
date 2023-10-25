@@ -1,9 +1,10 @@
 import './App.css';
 import Principal from './paginas/Principal';
+import Rotas from './routes'
 
 function App() {
   return (
-    <Principal/>
+    <Rotas/>
   );
 }
 

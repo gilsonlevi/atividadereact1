@@ -1,11 +1,12 @@
-import Cabecalho from '../../componentes/Cabecalho'
-import Rodape from '../../componentes/Rodape'
+// import Cabecalho from '../../componentes/Cabecalho'
+// import Rodape from '../../componentes/Rodape'
+
+import Conteudo from "../../componentes/Conteudo"
 
 function Principal() {
     return (
     <div>
-      <Cabecalho logo="imagens/header-logo.png" titulo="Supermercado Favorito"/>
-      <Rodape logo="imagens/header-logo.png"/>
+        <Conteudo/>
     </div>
     )
 }

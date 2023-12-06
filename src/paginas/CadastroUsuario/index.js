@@ -17,10 +17,26 @@ function CadastroUsuario() {
     setSenhaConfirmada('')
   }
   function salvarUsuario(nomeUsuario, emailUsuario, senhaUsuario) {
-    let usuario = {nomeUsuario, emailUsuario, senhaUsuario}
-    console.log(usuario)
-    localStorage.setItem("usuario", JSON.stringify (usuario))
-    limparCampos()
+    if(validacaoEmail(emailUsuario) == true){
+      let usuario = {nomeUsuario, emailUsuario, senhaUsuario}
+      console.log(usuario)
+      localStorage.setItem("usuario", JSON.stringify (usuario))
+      limparCampos()
+    }else {
+      alert("Confira o email")
+    }
+
+  }
+
+  function validacaoEmail(emailUsuario){
+    if(emailUsuario.includes('@')){
+      console.log("existe")
+      return true
+    }else {
+      console.log("Não existee")
+      return false
+    }
+    
   }
 
   function validacaoSenha(senhaUsuario, senhaUsuarioConfirmada) {

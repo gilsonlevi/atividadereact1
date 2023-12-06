@@ -22,6 +22,7 @@ function CadastroUsuario() {
       console.log(usuario)
       localStorage.setItem("usuario", JSON.stringify (usuario))
       limparCampos()
+      alert("Usuario cadastrado com sucesso")
     }else {
       alert("Confira o email")
     }

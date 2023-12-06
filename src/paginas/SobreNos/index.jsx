@@ -1,5 +1,3 @@
-import styles from './SobreNos.module.css'
-
 function SobreNos() {
     return(
         <div>

@@ -17,7 +17,7 @@ function CadastroUsuario() {
     setSenhaConfirmada('')
   }
   function salvarUsuario(nomeUsuario, emailUsuario, senhaUsuario) {
-    if(validacaoEmail(emailUsuario) == true){
+    if(validacaoEmail(emailUsuario) === true){
       let usuario = {nomeUsuario, emailUsuario, senhaUsuario}
       console.log(usuario)
       localStorage.setItem("usuario", JSON.stringify (usuario))
@@ -41,11 +41,17 @@ function CadastroUsuario() {
   }
 
   function validacaoSenha(senhaUsuario, senhaUsuarioConfirmada) {
+    console.log("A senha do usuario é ", senhaUsuario)
     if(senhaUsuario !== senhaUsuarioConfirmada) {
       alert("As senhas não são iguais")
-    }else{
+    }else if(senhaUsuario === "" || senhaUsuarioConfirmada === ""){
+      alert("Digite a senha")
+    }else {
       salvarUsuario(nomeUsuario,emailUsuario, senhaUsuario)
     }
+
+
+    
   }
 
 

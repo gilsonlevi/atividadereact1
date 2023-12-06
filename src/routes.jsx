@@ -11,8 +11,8 @@ function Rotas() {
         <BrowserRouter>
 
         <Cabecalho 
-        logo="imagens/header-logo.png" 
-        titulo="Supermercado Favorito"/> 
+        logo="imagens/logo-fav.png" 
+        titulo="FAVORITO.IO"/> 
         
         <Routes>
         <Route path="/" element={<Principal/>}/>
@@ -21,7 +21,7 @@ function Rotas() {
         <Route path="/cadastro" element={<CadastroUsuario/>}/>
         </Routes>
         
-        <Rodape logo="imagens/header-logo.png"/>
+        <Rodape logo="imagens/logo-fav.png"/>
 
         </BrowserRouter>
     )

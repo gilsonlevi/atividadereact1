@@ -16,7 +16,7 @@ const Conteudo = () => {
   return (
     <div className={styles.container}>
 
-      <div className={styles.criarFav}>
+
 
         <h1>Conteudo</h1>
         <form className={styles.formulario}>
@@ -53,7 +53,6 @@ const Conteudo = () => {
             onClick={() => salvarFavorito()}
           />
         </form>
-      </div>
 
       <ul className={styles.lista}>
         {favoritos[0] !== undefined &&

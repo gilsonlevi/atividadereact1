@@ -9,35 +9,32 @@ function CadastroUsuario() {
   const [senhaUsuario, setSenhaUsuario] = useState("")
   const [senhaUsuarioConfirmada, setSenhaConfirmada] = useState("")
 
+  // Função para limpar os campos quando um novo usuario for cadastrado
   function limparCampos(){
-    console.log('limpando')
     setEmailUsuario('')
     setNomeUsuario('')
     setSenhaUsuario('')
     setSenhaConfirmada('')
   }
+
   function salvarUsuario(nomeUsuario, emailUsuario, senhaUsuario) {
     if(validacaoEmail(emailUsuario) === true){
-      let usuario = {nomeUsuario, emailUsuario, senhaUsuario}
-      console.log(usuario)
+      const usuario = {nomeUsuario, emailUsuario, senhaUsuario}
       localStorage.setItem("usuario", JSON.stringify (usuario))
       limparCampos()
       alert("Usuario cadastrado com sucesso")
     }else {
-      alert("Confira o email")
+      alert("Confira se realmente é um email")
     }
-
   }
 
+  // Função para validar se o que o usuario colocou é mesmo um email
   function validacaoEmail(emailUsuario){
     if(emailUsuario.includes('@')){
-      console.log("existe")
       return true
     }else {
-      console.log("Não existee")
       return false
     }
-    
   }
 
   function validacaoSenha(senhaUsuario, senhaUsuarioConfirmada) {
@@ -49,11 +46,7 @@ function CadastroUsuario() {
     }else {
       salvarUsuario(nomeUsuario,emailUsuario, senhaUsuario)
     }
-
-
-    
   }
-
 
   return(
     <div className={styles.container}>

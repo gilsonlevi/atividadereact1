@@ -15,14 +15,14 @@ const Conteudo = () => {
   }
 
   // Configuração dos headers que você deseja adicionar
-const headers = {
-  'Access-Control-Allow-Origin': 'http://localhost:3000' 
-};
+  const headers = {
+    "Access-Control-Allow-Origin": "http://localhost:3000",
+  };
 
-// Objeto de configuração com os headers
-const config = {
-  headers: headers
-};
+  // Objeto de configuração com os headers
+  const config = {
+    headers: headers,
+  };
 
   useEffect(() => {
     axios
@@ -76,26 +76,26 @@ const config = {
             onClick={() => salvarFavorito()}
           />
         </form>
+
+        <ul className={styles.lista}>
+          {favoritos[0] !== undefined &&
+            favoritos.map((favorito) => (
+              <li style={favorito.importante ? { color: "red" } : {}}>
+                {" "}
+                {favorito.nomeSite} : {favorito.url}:
+                {favorito.importante ? "importante" : ""}{" "}
+              </li>
+            ))}
+        </ul>
+
+        <h1>Posts</h1>
+        {favoritos.map((post) => (
+          <div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </div>
+        ))}
       </div>
-
-      <ul className={styles.lista}>
-        {favoritos[0] !== undefined &&
-          favoritos.map((favorito) => (
-            <li style={favorito.importante ? { color: "red" } : {}}>
-              {" "}
-              {favorito.nomeSite} : {favorito.url}:
-              {favorito.importante ? "importante" : ""}{" "}
-            </li>
-          ))}
-      </ul>
-
-      <h1>Posts</h1>
-      {favoritos.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
-      ))}
     </div>
   );
 };

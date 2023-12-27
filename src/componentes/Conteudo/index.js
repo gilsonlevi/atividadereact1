@@ -16,7 +16,7 @@ const Conteudo = () => {
 
   // Configuração dos headers que você deseja adicionar
   const headers = {
-    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Access-Control-Allow-Origin": "http://127.0.0.1:3030 ",
   };
 
   // Objeto de configuração com os headers

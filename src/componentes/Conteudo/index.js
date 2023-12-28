@@ -12,6 +12,7 @@ const Conteudo = () => {
     axios
       .get("http://127.0.0.1:3030/favoritao")
       .then((response) => {
+        setNome('')
         setFavoritos(response.data);
       })
       .catch((error) => {
@@ -26,6 +27,7 @@ const Conteudo = () => {
     axios.post('http://127.0.0.1:3030/favoritao', newFavorito)
         .then(response => {
             alert(`Novo favorito criado`);
+            setNome('')
         })
         .catch(error => {
             alert("Digite o nome e a url")
@@ -78,10 +80,17 @@ const Conteudo = () => {
           {favoritos[0] !== undefined &&
             favoritos.map((favorito) => (
               <div key={favorito.id}>
-              <li style={favorito.importante ? { color: "red" } : {}}>
+              <li className={styles.listaFavoritos} style={favorito.importante ? { color: "red" } : {}}>
                 {" "}
-                {favorito.nome} : {favorito.url}:
+                <a href = {favorito.url} target="_blank" rel="noreferrer">{favorito.nome} </a>
                 {favorito.importante ? " importante" : ""}{" "}
+
+                <input
+            className={styles.botaoApagar}
+            type="button"
+            value="Deletar"
+            onClick={() => handleSubmit()}
+          />
               </li>
               </div>
             ))}

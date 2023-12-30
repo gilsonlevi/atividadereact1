@@ -12,7 +12,6 @@ const Conteudo = () => {
     axios
       .get("http://127.0.0.1:3030/favoritao")
       .then((response) => {
-        setNome('')
         setFavoritos(response.data);
       })
       .catch((error) => {
@@ -20,6 +19,7 @@ const Conteudo = () => {
       });
   });
 
+  // Criar novo favorito
   const handleSubmit = (e) => {
     // e.preventDefault(); PEDIR PARA DAMASCENO EXPLICAR O PORQUE FUNCIONA SEM
 
@@ -30,8 +30,20 @@ const Conteudo = () => {
             setNome('')
         })
         .catch(error => {
-            alert("Digite o nome e a url")
+            window.alert("Digite o nome e a url")
         });
+};
+
+//Deletar favorito 
+const handleDelete = (favoritoId) => {
+  axios.delete(`http://127.0.0.1:3030/favoritao/${favoritoId}`)
+      .then(() => {
+          setFavoritos(favoritos.filter(favorito => favorito.id !== favoritoId));
+          alert(`O favorito foi deletado com sucesso`);
+      })
+      .catch(error => {
+          console.error('Error deleting the post:', error);
+      });
 };
 
   return (
@@ -82,14 +94,14 @@ const Conteudo = () => {
               <div key={favorito.id}>
               <li className={styles.listaFavoritos} style={favorito.importante ? { color: "red" } : {}}>
                 {" "}
-                <a href = {favorito.url} target="_blank" rel="noreferrer">{favorito.nome} </a>
+                <a href = {favorito.url} target="_blank" rel="noreferrer" style={favorito.importante ? { color: "red" } : {}} >{favorito.nome} </a>
                 {favorito.importante ? " importante" : ""}{" "}
 
                 <input
             className={styles.botaoApagar}
             type="button"
             value="Deletar"
-            onClick={() => handleSubmit()}
+            onClick={() => handleDelete(favorito.id)}
           />
               </li>
               </div>
